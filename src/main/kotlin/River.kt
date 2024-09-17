@@ -24,9 +24,10 @@ data class Confluence(
 // Fließt Wasser von einem Ort in den Fluss?
 fun flowsFrom(location: String, river: River): Boolean =
     when (river) {
-        is Creek -> river.origin == location
+        is Creek ->
+            location == river.origin
         is Confluence ->
-            river.location == location
+            location == river.location
                     || flowsFrom(location, river.hauptfluss)
                     || flowsFrom(location, river.nebenfluss)
     }

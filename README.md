@@ -99,3 +99,8 @@ akzeptiert, kannst Du folgendermaßen konstruieren:
   benutzt. Die übersichtlichsten Programme entstehen meist, wenn für jeden Fall
   sparate Hilfsfunktionen definiert sind.
 
+## Selbstbezüge als Eingabe: Schablone
+
+Wenn Du eine Funktion schreibst, die Daten akzeptiert, in denen Selbstbezüge
+enthalten sind, dann schreibe an die Stellen der Selbstbezüge jeweils einen
+rekursiven Aufruf.

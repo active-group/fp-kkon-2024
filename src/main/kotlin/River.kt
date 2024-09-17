@@ -22,4 +22,12 @@ data class Confluence(
 ): River
 
 // Fließt Wasser von einem Ort in den Fluss?
-fun flowsFrom(location: String, river: River): Boolean = TODO()
+fun flowsFrom(location: String, river: River): Boolean =
+    when (river) {
+        is Creek ->
+            location == river.origin
+        is Confluence ->
+            location == river.location
+                    || flowsFrom(location, river.hauptfluss)
+                    || flowsFrom(location, river.nebenfluss)
+    }
